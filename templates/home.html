@@ -10,29 +10,51 @@
     overflow: hidden;
   }
 
+  /* Navigation Bar Styles */
   .nav-list {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 1.3rem;
     margin: 0;
     padding: 0;
   }
 
   .nav-list li {
     display: inline;
+    position: relative;
   }
 
   .nav-list a {
     color: #ffffff;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 5px;
   }
 
+  /* Hover Effect */
   .nav-list a:hover {
     color: #6c63ff;
+    transform: scale(1.1); /* Slightly increase size */
   }
 
+  /* Underline Animation */
+  .nav-list li::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #6c63ff;
+    transition: width 0.3s ease;
+  }
+
+  .nav-list li:hover::before {
+    width: 100%; /* Expand underline on hover */
+  }
+
+  /* Hero Section Styles */
   .hero-container {
     display: flex;
     flex-direction: column;
@@ -62,6 +84,7 @@
     }
   }
 
+  /* Logo Styles */
   .logo-img {
     position: absolute;
     top: 20px;
@@ -72,6 +95,12 @@
     z-index: 10;
   }
 
+  .logo-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); 
+  }
+
+  /* Navigation Bar Position */
   nav {
     position: absolute;
     top: 20px;
@@ -83,9 +112,6 @@
 {% endblock %}
 
 {% block body %}
-
-
-
 <img
   src="/static/images/LOGO.jpeg"
   alt="Club Logo"
