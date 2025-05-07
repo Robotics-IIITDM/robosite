@@ -96,8 +96,8 @@
   }
 
   .logo-img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); 
+    transform: scale(1.1); /* Slightly scale up logo on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* More intense shadow on hover */
   }
 
   /* Navigation Bar Position */
@@ -132,9 +132,29 @@
     <li><a href="/contact">Contact Us</a></li>
   </ul>
 </nav>
+<style>
+  #animated-text {
+    font-size: 3rem;
+    animation: zoomIn 2s ease-out forwards;
+    color:  #00ffab;
+  }
 
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+</style>
 
+<!-- Hero Section -->
 <div class="hero-container">
+  <div class="accent-circle"></div>
+    <h2 id="animated-text"><i>Inspire, Introduce, Initiate</i></h2>
   <h1 id="club-heading">IIITDM Robotics Club</h1>
 </div>
 {% endblock %}
