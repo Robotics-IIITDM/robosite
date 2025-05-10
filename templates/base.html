@@ -7,6 +7,28 @@
     {% block head %}{% endblock %}
 </head>
 <body>
+
+<div id="loader-wrapper">
+  <div class="robot-loader">
+    <div class="eye left"></div>
+    <div class="eye right"></div>
+    <div class="antenna"></div>
+    <div class="mouth"></div>
+  </div>
+    <p class="loader-text"><b>Loading...</b></p>
+</div>
+</div>
+
     {% block body %}{% endblock %}
+<script>
+
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const loader = document.getElementById('loader-wrapper');
+      if (loader) loader.remove();
+    }, 1600);
+  });
+</script>
+
 </body>
 </html>
