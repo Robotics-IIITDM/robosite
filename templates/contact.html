@@ -1,5 +1,7 @@
 <html>
   <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
       body {
       margin: 0;
@@ -13,6 +15,7 @@
       padding: 40px 20px;
       text-align: center;
     }
+
     header h1 {
       font-size: 48px;
       color: #00f5ff;
@@ -21,13 +24,13 @@
    .textbox {
   width: 500px;
   margin-left: auto;
-  margin-right: auto; 
+  margin-right: auto; /* space from the right edge */
   margin-top: 30px;
   margin-bottom: 30px;
   padding: 20 20px;
   background-color: #0f2027;
   border-radius: 15px;
-  box-shadow: 0 0 20px #00f5ff; 
+  box-shadow: 0 0 20px #00f5ff; /* dreamy green glow */
   border: 1px solid #2c5364;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   transition: box-shadow 0.3s ease-in-out;
@@ -37,10 +40,12 @@
 .textbox:hover {
   box-shadow: 0 0 30px #00f5ff;
 }
+
 .textbox h2 {
   text-align: center;
   color: #00f5ff;
 }
+
 input, textarea {
   width: 100%;
   padding: 8px;
@@ -50,6 +55,7 @@ input, textarea {
   margin-bottom: 12px;
   box-sizing: border-box;
 }
+
 button {
   background-color: #00f5ff;
   color: white;
@@ -60,9 +66,11 @@ button {
   width: 100%;
   font-size: 16px;
 }
+
 button:hover {
   background-color: #00b377;
 }
+
 footer {
   display: flex;
   justify-content: space-between;
@@ -72,6 +80,7 @@ footer {
   border-top: 2px ;
   font-family: Arial, sans-serif;
 }
+
 footer .left p {
   margin: 5px 0;
 }
@@ -90,22 +99,44 @@ footer .right ul {
 
 footer .right a {
   text-decoration: none;
-  color: #00f5ff; 
+  color: #00f5ff; /* Customize color */
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 footer .right a:hover {
-  color: #00C896; 
+  color: #00C896; /* Customize hover color */
 }
+
+.social-icons {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.social-icons li a {
+  color: white;
+  font-size: 35px;
+  transition: color 0.3s ease;
+}
+
+.social-icons li a:hover {
+  color: #00f5ff; /* Optional glow or hover color */
+}
+
+
+
   </style>
   </head>
-
     <body>
         <header>
     <h1>Contact Us</h1>
   </header>
-        
+  
+  <!--<p>Email: robotics@iiitdm.ac.in</p>
+  <p>Phone: 8667006465</p>-->
  <div class="textbox">
   <h2>Send us a message</h2>
   <form action="/contact" method="post">
@@ -128,11 +159,13 @@ footer .right a:hover {
   </div>
   <div class="right">
   
-  <ul>
-    <a href="https://www.instagram.com/roboticsclub.iiitdm/" target="_blank">Instagram</a>
-    <a href="https://in.linkedin.com/company/robotics-club-iiitdm-kancheepuram" target="_blank">LinkedIn</a>
-    <a href="https://github.com/roboticsclub-iiitdm" target="_blank">Github</a>
-  </ul>
+ <ul class="social-icons">
+  <li><a href="https://www.instagram.com/roboticsclub.iiitdm/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+  <li><a href="https://in.linkedin.com/company/robotics-club-iiitdm-kancheepuram" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+  <li><a href="https://github.com/roboticsclub-iiitdm" target="_blank"><i class="fab fa-github"></i></a></li>
+</ul>
+
+
   </div>
 </footer> 
     </body>
