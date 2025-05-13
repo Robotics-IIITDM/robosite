@@ -35,12 +35,14 @@
             color: white;
             margin-bottom: 15px;
             color: aqua;
+        }
         
         .g {
             font-size: 20px;
             color: white;
             margin-bottom: 35px;
         }
+        
         .s {
             font-size: 20px;
             color: aqua;
@@ -50,6 +52,19 @@
         .s :hover {
             color: rgba(9, 221, 221, 0.475);
             cursor: pointer;
+        }
+        
+        .m-img {
+            right: 325px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgb(77, 198, 198);
+        }
+        
+        .img {
+            font-size: 20px;
+            color: white;
+            margin-bottom: 30px;
+            height: 650px;
         }
     </style>
     <img src="/static/images/logo.jpeg" alt="Club Logo" width="100px" height="100px" loading="lazy" class="logo-img" style="
@@ -61,11 +76,23 @@
    z-index: 10;
    
  ">
+
+
     <center>
         <h2 class="headings1">About Robotics Club</h2>
     </center>
     <h3 class="headings2">When did it start?</h3>
-    <p class="g">Robotics club was established in 2022 </p>
+    <p class="img">Robotics club was established in 2022
+        <img src="static/TEAM PIC 1.jpg" width="1000px" height="500px" loading="lazy" class="m-img" style="
+        position: absolute;
+        margin-top: 80px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        z-index: 10; 
+        ">
+    </p>
     <h3 class="headings2">Who are we? </h3>
     <p class="g">A Team of Inter-disciplinary students working on Design and building Battle-Bots,RC Cars,Line followers,Manipulators and many more interesting projects in robotics domain. </p>
 
@@ -82,11 +109,43 @@
                 &#9642;Creating Autonomous robots
             </li>
         </ul>
+        <p class="g">For more details related to each project:</p>
+        <a href="/projects.html" class="s">PROJECTS</a>
+
     </p>
+    <h3 class="headings2">CLUB MEMBER'S OFFICIAL MERCH</h3>
+    <p class="img">THE CLUBS OFFICIAL MERCH:
+        <img src="static/TEAM PIC 3.jpg" width="1000px" height="500px" loading="lazy" class="m-img" style="
+        position: absolute;
+        margin-top: 80px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        z-index: 10; 
+        ">
+
+    </p>
+    <h3 class="headings2">CLUB PHOTO</h3>
+    <p class="img">TEAM PHOTO
+        <img src="static/TEAM PIC 2.jpg" width="1000px" height="500px" loading="lazy" class="m-img" style="
+        position: absolute;
+        margin-top: 80px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        z-index: 10; 
+        ">
+        <p class="g">Get to know more about members in club through:</p>
+        <a href="/team.html" class="s">TEAM MEMBERS</a>
+
+    </p>
+
     <p class="g">
         Navigate back to home page here:
     </p>
-    <a href="/" class="s">Home Page</a>
+    <a href="/" class="s">HOME</a>
 </body>
 
 </html>
