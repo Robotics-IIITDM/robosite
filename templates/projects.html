@@ -1,0 +1,244 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<style>
+    .projects-section {
+        padding: 4rem 2rem;
+        background: var(--gradient-1);
+        min-height: 100vh;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .circuit-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: var(--circuit-pattern);
+        opacity: 0.05;
+        z-index: 0;
+    }
+
+    .projects-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .projects-header {
+        text-align: center;
+        margin-bottom: 4rem;
+        position: relative;
+    }
+
+    .projects-title {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 3rem;
+        background: var(--gradient-2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1rem;
+        position: relative;
+    }
+
+    .projects-title::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        border: 2px solid var(--primary-color);
+        border-radius: 10px;
+        opacity: 0.2;
+        animation: pulse 2s infinite;
+    }
+
+    .projects-subtitle {
+        color: var(--text-secondary);
+        font-size: 1.2rem;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .project-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0, 242, 255, 0.1);
+        position: relative;
+    }
+
+    .project-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--gradient-2);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 0;
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--primary-color);
+    }
+
+    .project-card:hover::before {
+        opacity: 0.1;
+    }
+
+    .project-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .project-card:hover .project-image {
+        transform: scale(1.05);
+    }
+
+    .project-info {
+        padding: 1.5rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .project-title {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 1.5rem;
+        color: var(--text-primary);
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .project-title i {
+        color: var(--primary-color);
+    }
+
+    .project-description {
+        color: var(--text-secondary);
+        margin-bottom: 1rem;
+        line-height: 1.6;
+    }
+
+    .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-tag {
+        background: rgba(0, 242, 255, 0.1);
+        color: var(--primary-color);
+        padding: 0.3rem 0.8rem;
+        border-radius: 15px;
+        font-size: 0.9rem;
+        border: 1px solid rgba(0, 242, 255, 0.2);
+    }
+
+    .project-link {
+        display: inline-block;
+        color: var(--text-primary);
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        background: var(--gradient-2);
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 0.9rem;
+    }
+
+    .project-link:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 242, 255, 0.2);
+    }
+
+    @media (max-width: 768px) {
+        .projects-title {
+            font-size: 2rem;
+        }
+        .projects-grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="projects-section">
+    <div class="circuit-pattern"></div>
+    <div class="projects-container">
+        <div class="projects-header">
+            <h1 class="projects-title">Our Projects</h1>
+            <p class="projects-subtitle">Explore our innovative robotics projects</p>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1507582020474-9a35b7d455d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Autonomous Drone" class="project-image">
+                <div class="project-info">
+                    <h2 class="project-title"><i class="fas fa-drone"></i> Autonomous Drone</h2>
+                    <p class="project-description">
+                        An AI-powered drone with advanced obstacle avoidance and real-time video streaming capabilities.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">AI</span>
+                        <span class="project-tag">Computer Vision</span>
+                        <span class="project-tag">Robotics</span>
+                    </div>
+                    <a href="#" class="project-link">Learn More</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Smart Home Robot" class="project-image">
+                <div class="project-info">
+                    <h2 class="project-title"><i class="fas fa-robot"></i> Smart Home Robot</h2>
+                    <p class="project-description">
+                        A home assistant robot capable of cleaning and controlling smart home devices.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">IoT</span>
+                        <span class="project-tag">Automation</span>
+                        <span class="project-tag">Smart Home</span>
+                    </div>
+                    <a href="#" class="project-link">Learn More</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1581092921461-39b9d08a9b21?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Industrial Automation" class="project-image">
+                <div class="project-info">
+                    <h2 class="project-title"><i class="fas fa-industry"></i> Industrial Automation</h2>
+                    <p class="project-description">
+                        A robotic system designed for high-precision manufacturing tasks.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Manufacturing</span>
+                        <span class="project-tag">Automation</span>
+                        <span class="project-tag">Industry 4.0</span>
+                    </div>
+                    <a href="#" class="project-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

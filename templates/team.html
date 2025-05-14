@@ -1,0 +1,357 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<style>
+    .team-section {
+        padding: 4rem 2rem;
+        background: var(--gradient-1);
+        min-height: 100vh;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .circuit-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: var(--circuit-pattern);
+        opacity: 0.05;
+        z-index: 0;
+    }
+
+    .team-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .team-header {
+        text-align: center;
+        margin-bottom: 4rem;
+        position: relative;
+    }
+
+    .team-title {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 3rem;
+        background: var(--gradient-2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1rem;
+        position: relative;
+    }
+
+    .team-title::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        border: 2px solid var(--primary-color);
+        border-radius: 10px;
+        opacity: 0.2;
+        animation: pulse 2s infinite;
+    }
+
+    .team-subtitle {
+        color: var(--text-secondary);
+        font-size: 1.2rem;
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+
+    .team-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0, 242, 255, 0.1);
+        position: relative;
+    }
+
+    .team-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--gradient-2);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 0;
+    }
+
+    .team-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--primary-color);
+    }
+
+    .team-card:hover::before {
+        opacity: 0.1;
+    }
+
+    .team-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .team-card:hover .team-image {
+        transform: scale(1.05);
+    }
+
+    .team-info {
+        padding: 1.5rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .team-name {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 1.5rem;
+        color: var(--text-primary);
+        margin-bottom: 0.5rem;
+    }
+
+    .team-role {
+        color: var(--primary-color);
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .team-role i {
+        font-size: 0.9rem;
+    }
+
+    .team-social {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .social-link {
+        color: var(--text-secondary);
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+        color: var(--primary-color);
+        transform: translateY(-3px);
+    }
+
+    @media (max-width: 768px) {
+        .team-title {
+            font-size: 2rem;
+        }
+        .team-grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+    }
+
+    .team-section-heading {
+        grid-column: 1 / -1;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 2rem;
+        color: var(--primary-color);
+        margin: 2rem 0 1rem 0;
+        text-align: left;
+        letter-spacing: 2px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="team-section">
+    <div class="circuit-pattern"></div>
+    <div class="team-container">
+        <div class="team-header">
+            <h1 class="team-title">Our Team</h1>
+            <p class="team-subtitle">Meet the minds behind IIITDM Robotics Club</p>
+        </div>
+
+        <div class="team-grid">
+            <!-- Section: Leads -->
+            <div class="team-section-heading">Leads</div>
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="Dhanvanth Saravanan" class="team-image">
+                <div class="team-info">
+                    <h2 class="team-name">Dhanvanth Saravanan</h2>
+                    <p class="team-role"><i class="fas fa-user-tie"></i> Club Lead</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="Hemachandra KS" class="team-image">
+                <div class="team-info">
+                    <h2 class="team-name">Hemachandra KS</h2>
+                    <p class="team-role"><i class="fas fa-user-tie"></i> Club Lead</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="Deepika" class="team-image">
+                <div class="team-info">
+                    <h2 class="team-name">Deepika</h2>
+                    <p class="team-role"><i class="fas fa-microchip"></i> Electronics Lead</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="Eashwar Krishna" class="team-image">
+                <div class="team-info">
+                    <h2 class="team-name">Eashwar Krishna</h2>
+                    <p class="team-role"><i class="fas fa-cogs"></i> Mechanical Lead</p>
+                </div>
+            </div>
+            <!-- Section: Managers -->
+            <div class="team-section-heading">Managers</div>
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="CH Aashish" class="team-image">
+                <div class="team-info">
+                    <h2 class="team-name">CH Aashish</h2>
+                    <p class="team-role"><i class="fas fa-user-cog"></i> Manager</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="Kennath Sharon" class="team-image">
+                <div class="team-info">
+                    <h2 class="team-name">Kennath Sharon</h2>
+                    <p class="team-role"><i class="fas fa-user-cog"></i> Manager</p>
+                </div>
+            </div>
+            <!-- Section: Members -->
+            <div class="team-section-heading">Members</div>
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="Sahiti A" class="team-image">
+                <div class="team-info">
+                    <h2 class="team-name">Sahiti A</h2>
+                    <p class="team-role"><i class="fas fa-laptop-code"></i> CS Team Member</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="Aruivel" class="team-image">
+                <div class="team-info">
+                    <h2 class="team-name">Aruivel</h2>
+                    <p class="team-role"><i class="fas fa-laptop-code"></i> CS Team Member</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="Ayushya Paswan" class="team-image">
+                <div class="team-info">
+                    <h2 class="team-name">Ayushya Paswan</h2>
+                    <p class="team-role"><i class="fas fa-laptop-code"></i> CS Team Member</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="Sreya Sunil" class="team-image">
+                <div class="team-info">
+                    <h2 class="team-name">Sreya Sunil</h2>
+                    <p class="team-role"><i class="fas fa-laptop-code"></i> CS Team Member</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="Sai Kiran" class="team-image">
+                <div class="team-info">
+                    <h2 class="team-name">Sai Kiran</h2>
+                    <p class="team-role"><i class="fas fa-laptop-code"></i> CS Team Member</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="Bhavya Sree Srisoola" class="team-image">
+                <div class="team-info">
+                    <h2 class="team-name">Bhavya Sree Srisoola</h2>
+                    <p class="team-role"><i class="fas fa-microchip"></i> ECE Team Member</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="Hari Om Rai" class="team-image">
+                <div class="team-info">
+                    <h2 class="team-name">Hari Om Rai</h2>
+                    <p class="team-role"><i class="fas fa-microchip"></i> ECE Team Member</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="Harish Ram RV" class="team-image">
+                <div class="team-info">
+                    <h2 class="team-name">Harish Ram RV</h2>
+                    <p class="team-role"><i class="fas fa-microchip"></i> ECE Team Member</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="Mohitha S" class="team-image">
+                <div class="team-info">
+                    <h2 class="team-name">Mohitha S</h2>
+                    <p class="team-role"><i class="fas fa-microchip"></i> ECE Team Member</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="Pranav Nandhakumar" class="team-image">
+                <div class="team-info">
+                    <h2 class="team-name">Pranav Nandhakumar</h2>
+                    <p class="team-role"><i class="fas fa-microchip"></i> ECE Team Member</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="Sanath Kumar" class="team-image">
+                <div class="team-info">
+                    <h2 class="team-name">Sanath Kumar</h2>
+                    <p class="team-role"><i class="fas fa-microchip"></i> ECE Team Member</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="M. Sufiyan" class="team-image">
+                <div class="team-info">
+                    <h2 class="team-name">M. Sufiyan</h2>
+                    <p class="team-role"><i class="fas fa-microchip"></i> ECE Team Member</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="Kaarthick" class="team-image">
+                <div class="team-info">
+                    <h2 class="team-name">Kaarthick</h2>
+                    <p class="team-role"><i class="fas fa-cogs"></i> MECH Team Member</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="Karthik Alagappan" class="team-image">
+                <div class="team-info">
+                    <h2 class="team-name">Karthik Alagappan</h2>
+                    <p class="team-role"><i class="fas fa-cogs"></i> MECH Team Member</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="Prasad" class="team-image">
+                <div class="team-info">
+                    <h2 class="team-name">Prasad</h2>
+                    <p class="team-role"><i class="fas fa-cogs"></i> MECH Team Member</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="Raghava" class="team-image">
+                <div class="team-info">
+                    <h2 class="team-name">Raghava</h2>
+                    <p class="team-role"><i class="fas fa-cogs"></i> MECH Team Member</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="Santhana Srinivasa" class="team-image">
+                <div class="team-info">
+                    <h2 class="team-name">Santhana Srinivasa</h2>
+                    <p class="team-role"><i class="fas fa-cogs"></i> MECH Team Member</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
