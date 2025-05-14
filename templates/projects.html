@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -71,6 +71,25 @@
       width: 100%;
       border-radius: 8px;
     }
+    .home-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  color: #00f5ff;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #00f5ff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.home-button:hover {
+  background-color: #00f5ff;
+  color: #0a0f1d;
+  box-shadow: 0 0 15px #00f5ff;
+  transform: scale(1.05);
+}
 
     footer {
       background-color: #0f172a;
@@ -78,12 +97,63 @@
       padding: 20px;
       color: #7f8c8d;
     }
+    /* Smooth fade-in of entire page */
+body {
+  animation: fadeIn 1.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Fade-up animation for section titles */
+.section-title {
+  animation: fadeUp 1s ease-in-out;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Project cards animation */
+.project {
+  animation: popIn 0.8s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Hover effect on project cards */
+.project:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+}
+
   </style>
 </head>
 <body>
   <header>
     <h1>ROBOTICS CLUB – IIITDM</h1>
     <p>Innovation. Automation. Creation.</p>
+    <a href="/" class="home-button">🏠 Home</a>
+
   </header>
 
   <div class="main">
@@ -154,4 +224,5 @@
   </div>
 </body>
 </html>
+
 
