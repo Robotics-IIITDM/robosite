@@ -1,337 +1,256 @@
 <!DOCTYPE html>
-<html>
-<link rel="stylesheet" href="main.css">
-<link href="base.html">
+<html lang="en">
 
-<body>
+<head>
+    <meta charset="UTF-8">
+    <title>Our Team</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
-            height: 100vh;
             background-color: #0a0f1df1;
-            color: #fff;
             font-family: 'Orbitron', sans-serif;
+            color: white;
+            overflow-x: hidden;
         }
         
-        ul {
-            list-style-type: circle;
+        .logo-img {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            z-index: 10;
         }
-    </style>
-    <style>
-        .headings1 {
-            background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
-            font-weight: bold;
-            padding-top: 100px;
-            padding-bottom: 100px;
-            color: aqua;
+        
+        .heading {
             text-align: center;
             font-size: 50px;
-            transition: box-shadow 0.15s;
-            text-shadow: 0 4px 10px rgb(23, 124, 124);
+            padding: 80px 0 20px;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: cyan;
+            text-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
         }
         
-        .headings2 {
-            font-size: 35px;
-            font-weight: bold;
-            color: white;
-            margin-bottom: 15px;
-            color: rgb(51, 235, 235);
-            margin-left: 220px;
+        .section {
+            margin: 40px auto;
+            max-width: 1000px;
+            padding: 0 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
         }
         
-        .n {
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section h2 {
             font-size: 30px;
-            color: white;
+            color: #00ffff;
+            border-bottom: 2px solid #00ffff44;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
         
-        .g {
-            font-size: 30px;
-            color: white;
-            margin-bottom: 35px;
-            height: 600px;
-            width: 1000px;
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .card {
+            background: #1a2238;
+            border-radius: 12px;
+            width: 220px;
+            text-align: center;
+            padding: 20px 15px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+        
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            object-position: center top;
+            /* try center 30% or center 40% too */
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
-            margin-left: 220px;
-            background-color: #1c2331;
+            margin-bottom: 15px;
         }
         
-        .s {
-            font-size: 30px;
-            margin-bottom: 35px;
-            color: white;
-            text-decoration: underline;
-            transition: 2ms;
+        .card h4 {
+            font-size: 18px;
+            color: aqua;
+            margin: 0;
         }
         
-        .s:hover {
-            color: rgb(43, 128, 128);
-            cursor: pointer;
+        .card p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: #ccc;
+        }
+        
+        .back-link {
+            display: block;
+            text-align: center;
+            margin: 60px auto;
+            color: cyan;
             text-decoration: none;
+            font-size: 18px;
         }
         
-        .m-img {
-            right: 325px;
-        }
-        
-        .d {
-            font-size: 30px;
-            color: white;
-            margin-bottom: 35px;
-            margin-left: 220px;
+        .back-link:hover {
+            color: #09dddd;
         }
     </style>
-    <img src="/static/images/logo.jpeg" alt="Club Logo" width="100px" height="100px" loading="lazy" class="logo-img" style="
-    position: absolute;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    z-index: 10; 
-    ">
+</head>
 
+<body>
 
-    <center>
-        <h2 class="headings1">OUR TEAM</h2>
-    </center>
+    <img src="/static/images/logo.jpeg" alt="Logo" class="logo-img">
+    <div class="heading">OUR TEAM</div>
 
-    <h3 class="headings2"> CLUB LEADS</h3>
+    <div class="section">
+        <h2>CLUB LEADS</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="/" alt="Dhanvanth">
+                <h4>Dhanvanth Saravan</h4>
+                <p>EC23B1097</p>
+                <a class="s" href="https://www.linkedin.com/in/dhanvanth-saravanan-366956288">LINKEDIN</a>
+            </div>
+            <div class="card">
+                <img src="/" alt="HEMACHANDRA">
+                <h4>Hema Chandra</h4>
+                <p>ME23B2020</p>
+                <a class="s" href="/ ">LINKEDIN</a>
+            </div>
+        </div>
+    </div>
 
+    <div class="section">
+        <h2>TEAM MANAGERS</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="/" alt="AASHISH">
+                <h4>CH Aashish</h4>
+                <p>EC23B1124</p>
+                <a class="s" href="/ ">LINKEDIN</a>
+            </div>
+            <div class="card">
+                <img src="/" alt="kennath">
+                <h4>Kennath Sharon</h4>
+                <p>EC23B1079</p>
+                <a class="s" href="/ ">LINKEDIN</a>
+            </div>
+        </div>
+    </div>
 
+    <div class="section">
+        <h2>ECE TEAM</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="/" alt="hari">
+                <h4>Hari Om Rai</h4>
+                <p>EC24B1072</p>
+                <a class="s" href="/ ">LINKEDIN</a>
+            </div>
+            <div class="card">
+                <img src="/" alt="harish">
+                <h4>Harish Ram R V</h4>
+                <p>ME24B1046</p>
+                <a class="s" href="/ ">LINKEDIN</a>
+            </div>
+            <div class="card">
+                <img src="static/SANATH.jpg" alt="Sanath">
+                <h4>Santh Kumar</h4>
+                <p>EC24I2026</p>
+                <a class="s" href="/ ">LINKEDIN</a>
+            </div>
+            <div class="card">
+                <img src="static/mohitha.jpg" alt="mohitha">
+                <h4>MOHITHA s</h4>
+                <p>EC24I1017</p>
+                <a class="s" href="https://www.linkedin.com/in/mohitha-s-265b96341">LINKEDIN</a>
+            </div>
+            <div class="card">
+                <img src="/" alt="sufiyan">
+                <h4>M. Sufiyan</h4>
+                <p>EC23B1104</p>
+                <a class="s" href="/ ">LINKEDIN</a>
+            </div>
+        </div>
+    </div>
 
+    <div class="section">
+        <h2>SOFTWARE TEAM</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="/" alt="aayushya">
+                <h4>Aayushya Paswan</h4>
+                <p>CS24I1012</p>
+                <a class="s" href="http://www.linkedin.com/in/aayushya-paswan-789565341  ">LINKEDIN</a>
+            </div>
+            <div class="card">
+                <img src="/" alt="Arulvel">
+                <h4>Arulvel</h4>
+                <p>EC24I1027</p>
+                <a class="s" href="/ ">LINKEDIN</a>
+            </div>
+            <div class="card">
+                <img src="static/BHAVYA.jpg" alt="Bhavya">
+                <h4>Bhavya Sree Sirisolla</h4>
+                <p>CS24B1074</p>
+                <a class="s" href="www.linkedin.com/in/bhavya-sree-sirisolla-9b7580353 ">LINKEDIN</a>
+            </div>
+            <div class="card">
+                <img src="/" alt="sahiti">
+                <h4>Sahiti A</h4>
+                <p>CS24B2019</p>
+                <a class="s" href="https://www.linkedin.com/in/sahiti-adhikarla-481188324 ">LINKEDIN</a>
+            </div>
+            <div class="card">
+                <img src="/" alt="sai">
+                <h4>Sai Kiran</h4>
+                <p>CS24I1060</p>
+                <a class="s" href="/ ">LINKEDIN</a>
+            </div>
+            <div class="card">
+                <img src="/" alt="shreya">
+                <h4>Sreya Sunil</h4>
+                <p>CS24B2025</p>
+                <a class="s" href="/ ">LINKEDIN</a>
+            </div>
+        </div>
+    </div>
 
-    <p class="g"> &#8594; DHANVANTH SARAVAN<br>EC23B1097<br><a class="s" href="https://www.linkedin.com/in/dhanvanth-saravanan-366956288 ">LINKEDIN</a>
-        <img src="static/DHANVANTH.jpg" width="300px" height="450px" loading="lazy" class="m-img" style="
-        position: absolute;
-        left: px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        z-index: 10; 
-        ">
+    <a href="/" class="back-link">← Back to Home Page</a>
 
-    </p>
-    <p class="g">&#8594; HEMA CHANDRA<br>ME23B2020<br><a class="s" href="/">LINKEDIN</a>
-        <img src="/" width="300px" height="450px" loading="lazy" class="m-img" style="
-        position: absolute;
-        left: px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        z-index: 10; 
-        "></p>
+    <script>
+        const sections = document.querySelectorAll('.section');
+        const revealOnScroll = () => {
+            sections.forEach(sec => {
+                const secTop = sec.getBoundingClientRect().top;
+                const winHeight = window.innerHeight;
+                if (secTop < winHeight - 100) {
+                    sec.classList.add('visible');
+                }
+            });
+        };
 
-
-    <h3 class="headings2">TEAM MANAGERS </h3>
-
-
-    <p class="g">
-        &#8594; CH AASHISH<br>EC23B1124<br><a class="s" href="/">LINKEDIN</a>
-        <img src="/" width="300px" height="450px" loading="lazy" class="m-img" style="
-        position: absolute;
-        left: px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        z-index: 10; 
-        ">
-    </p>
-    <p class="g">&#8594; KENNATH SHARON<br>EC23B1079<br><a class="s" href="/ ">LINKEDIN</a>
-        <img src="/" width="300px" height="450px" loading="lazy" class="m-img" style="
-        position: absolute;
-        left: px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        z-index: 10; 
-        "></p>
-
-    <h3 class="headings2">MECHANICAL LEAD</h3>
-
-    <p class="g">&#8594; P ESWARA RAMAKRISHNA<br>ME23B2008<br><a class="s" href="/ ">LINKEDIN</a>
-        <img src="static/eashwar.jpg" width="300px" height="450px" loading="lazy" class="m-img" style="
-        position: absolute;
-        left: px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        z-index: 10; 
-        "></p>
-
-    <h3 class="headings2">MECHANICAL TEAM</h3>
-    <p class="g">&#8594; KAARTHICK<br>ME24B1056<br><a class="s" href="/ ">LINKEDIN</a>
-        <img src="static/karthik.jpg" width="300px" height="450px" loading="lazy" class="m-img" style="
-        position: absolute;
-        left: px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        z-index: 10; 
-        "></p>
-    <p class="g">&#8594; PRASAD<br>EC23I1005<br><a class="s" href="/ ">LINKEDIN</a>
-        <img src="/" width="300px" height="450px" loading="lazy" class="m-img" style="
-        position: absolute;
-        left: px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        z-index: 10; 
-        "></p>
-    <p class="g">&#8594; SANTHANA SRINIVASA<br>ME24B1017<br><a class="s" href="/">LINKEDIN</a>
-        <img src="/" width="300px" height="450px" loading="lazy" class="m-img" style="
-        position: absolute;
-        left: px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        z-index: 10; 
-        "></p>
-    <p class="g">&#8594; RAGHAVENDRA<br>EC23B1048<br><a class="s" href="/">LINKEDIN</a>
-        <img src="/" width="300px" height="450px" loading="lazy" class="m-img" style="
-        position: absolute;
-        left: px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        z-index: 10; 
-        "></p>
-
-    <h3 class="headings2">ECE LEAD</h3>
-
-
-
-    <p class="g">&#8594; DEEPIKA S P<br>EC23B1050<br><a class="s" href="/ ">LINKEDIN</a>
-        <img src="/" width="300px" height="450px" loading="lazy" class="m-img" style="
-        position: absolute;
-        left: px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        z-index: 10; 
-        "></p>
-
-    <h3 class="headings2">ECE TEAM</h3>
-
-
-
-    <p class="g">&#8594; HARI OM RAI<br>EC24B1072<br><a class="s" href="/">LINKEDIN</a>
-        <img src="/" width="300px" height="450px" loading="lazy" class="m-img" style="
-        position: absolute;
-        left: px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        z-index: 10; 
-        "></p>
-    <p class="g">&#8594; HARISH RAM R V<br>ME24B1046<br><a class="s" href="/">LINKEDIN</a>
-        <img src="/" width="300px" height="450px" loading="lazy" class="m-img" style="
-        position: absolute;
-        left: px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        z-index: 10; 
-        "></p>
-    <p class="g">&#8594; MOHITHA S<br>EC24I1017<br><a class="s" href="https://www.linkedin.com/in/mohitha-s-265b96341 ">LINKEDIN</a>
-        <img src="static/mohitha.jpg" width="300px" height="450px" loading="lazy" class="m-img" style="
-        position: absolute;
-        left: px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        z-index: 10; 
-        "></p>
-    <p class="g">&#8594; SANTH KUMAR<br>EC24I2026<br><a class="s" href="/ ">LINKEDIN</a>
-        <img src="static/SANATH.jpg" width="300px" height="450px" loading="lazy" class="m-img" style="
-        position: absolute;
-        left: px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        z-index: 10; 
-        ">
-    </p>
-    <p class="g">&#8594; M.SUFIYAN<br>EC23B1104<br><a class="s" href="/ ">LINKEDIN</a>
-        <img src="/" width="300px" height="450px" loading="lazy" class="m-img" style="
-        position: absolute;
-        left: px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        z-index: 10; 
-        "></p>
-
-    <h3 class="headings2">SOFTWARE TEAM</h3>
-
-
-
-
-
-    <p class="g">&#8594; AAYUSHYA PASWAN<br>CS24I1012<br><a class="s" href="http://www.linkedin.com/in/aayushya-paswan-789565341 ">LINKEDIN</a>
-        <img src="static/aayushya paswan.jpg" width="300px" height="450px" loading="lazy" class="m-img" style="
-        position: absolute;
-        left: px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        z-index: 10; 
-        "></p>
-    <p class="g">&#8594; ARULVEL<br>EC24I1027<br><a class="s" href="/">LINKEDIN</a>
-        <img src="/" width="300px" height="450px" loading="lazy" class="m-img" style="
-        position: absolute;
-        left: px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        z-index: 10; 
-        "></p>
-    <p class="g">&#8594; BHAVYA SREE SIRISOLLA<br>CS24B1074<br><a class="s" href="www.linkedin.com/in/bhavya-sree-sirisolla-9b7580353">LINKEDIN</a>
-        <img src="static/BHAVYA.jpg" width="300px" height="450px" loading="lazy" class="m-img" style="
-        position: absolute;
-        left: px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        z-index: 10; 
-        ">
-
-    </p>
-    <p class="g">&#8594; SAHITI A<br>CS24B2019<br><a class="s" href="https://www.linkedin.com/in/sahiti-adhikarla-481188324">LINKEDIN</a>
-        <img src="static/sahiti.jpg" width="300px" height="450px" loading="lazy" class="m-img" style="
-        position: absolute;
-        left: px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        z-index: 10; 
-        "></p>
-    <p class="g">&#8594; SAI KIRAN<br>CS24I1060<br><a class="s" href="/">LINKEDIN</a>
-        <img src="static/sai kiran.jpg" width="300px" height="450px" loading="lazy" class="m-img" style="
-        position: absolute;
-        left: px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        z-index: 10; 
-        "></p>
-    <p class="g">&#8594; SHREYA SUNIL<br>CS24B2025<br><a class="s" href="/ ">LINKEDIN</a>
-        <img src="static/shreya sunil.jpg" width="300px" height="450px" loading="lazy" class="m-img" style="
-        position: absolute;
-        left: px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        z-index: 10; 
-        "></p>
-
-
-    <p class="n"> Navigate back to home page here:</p>
-
-
-
-    <a href="/" class="s">Home Page</a>
-
-
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+    </script>
 
 </body>
 
