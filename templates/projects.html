@@ -2,227 +2,283 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Robotics Club – IIITDM</title>
+  <title>Projects - IIITDM Robotics Club</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: #0a0f1d;
-      color: #f0f0f0;
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
     }
-    header {
-      background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
-      padding: 40px 20px;
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      gap: 1.3rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-list li {
+      display: inline;
+      position: relative;
+    }
+
+    .nav-list a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease, transform 0.3s ease;
+      padding: 5px;
+    }
+
+    .nav-list a:hover {
+      color: #6c63ff;
+      transform: scale(1.1);
+    }
+
+    .nav-list li::before {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #6c63ff;
+      transition: width 0.3s ease;
+    }
+
+    .nav-list li:hover::before {
+      width: 100%; 
+    }
+
+     /* .logo-img {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 10;
+      width: 200px;
+      height: auto;
+    }
+
+    .logo-img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    } */
+
+    nav {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      z-index: 10;
+      font-size: 1.5rem;
+    }
+
+     .page-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 60vh;
       text-align: center;
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     }
 
-    header h1 {
-      font-size: 48px;
-      color: #00f5ff;
-      margin-bottom: 10px;
+    .page-header h1 {
+      font-size: 6rem;
+      margin: 0;
+      background: linear-gradient(90deg, #00f0ff, #00ffab);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glowText 2s ease-in-out infinite alternate;
+    } 
+
+    /* @keyframes glowText {
+      from {
+        text-shadow: 0 0 10px #00ffe7, 0 0 20px #00ffe7;
+      }
+      to {
+        text-shadow: 0 0 20px #00ffee, 0 0 30px #00ffcc;
+      }
+    }  */
+
+    .page-header p {
+      font-size: 2rem;
+      color: #fff;
+      font-style: italic;
+      animation: zoomIn 2s ease-out forwards;
     }
 
-    header p {
-      font-size: 18px;
-      color: #cccccc;
+    @keyframes zoomIn {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
 
-    .main {
-      max-width: 1100px;
-      margin: auto;
+    /* Projects section */
+    .projects-container {
+      max-width: 1200px;
+      margin: 0 auto;
       padding: 40px 20px;
     }
 
-    h2.section-title {
-      font-size: 36px;
-      color: #00f5ff;
-      border-left: 5px solid #00f5ff;
-      padding-left: 15px;
-      margin-top: 60px;
+    .section-title {
+      font-size: 3.5rem;
+      text-align: center;
+      margin: 40px 0;
+      background: linear-gradient(90deg, #00f0ff, #00ffab);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .project {
+    .project-card {
       display: flex;
       flex-wrap: wrap;
-      margin-bottom: 60px;
-      background-color: #1c2331;
-      border-radius: 12px;
+      margin-bottom: 80px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+      border: 1px solid rgba(108, 99, 255, 0.3);
+      transition: transform 0.3s ease;
     }
 
-    .project-content, .project-video {
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .project-info, .project-media {
       flex: 1;
       min-width: 300px;
-      padding: 20px;
+      padding: 30px;
     }
 
-    .project-content h3 {
-      color: #00f5ff;
-      margin-bottom: 10px;
+    .project-info h3 {
+      font-size: 2.2rem;
+      color: #6c63ff;
+      margin-bottom: 20px;
     }
 
-    .project-content p {
+    .project-info p {
+      font-size: 1.1rem;
       line-height: 1.6;
       color: #cfd8dc;
+      margin-bottom: 15px;
     }
 
-    .project-video video {
+    .project-media video {
       width: 100%;
-      border-radius: 8px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     }
-    .home-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  color: #00f5ff;
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid #00f5ff;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.home-button:hover {
-  background-color: #00f5ff;
-  color: #0a0f1d;
-  box-shadow: 0 0 15px #00f5ff;
-  transform: scale(1.05);
-}
 
     footer {
-      background-color: #0f172a;
+      background-color: #000;
       text-align: center;
-      padding: 20px;
-      color: #7f8c8d;
+      padding: 30px;
+      color: #aaa;
+      border-top: 1px solid rgba(108, 99, 255, 0.2);
     }
-    /* Smooth fade-in of entire page */
-body {
-  animation: fadeIn 1.2s ease-in;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* Fade-up animation for section titles */
-.section-title {
-  animation: fadeUp 1s ease-in-out;
-}
-
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Project cards animation */
-.project {
-  animation: popIn 0.8s ease-in-out;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-@keyframes popIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Hover effect on project cards */
-.project:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
-}
-
   </style>
 </head>
 <body>
-  <header>
-    <h1>ROBOTICS CLUB – IIITDM</h1>
-    <p>Innovation. Automation. Creation.</p>
-    <a href="/" class="home-button">🏠 Home</a>
 
-  </header>
 
-  <div class="main">
-    <!-- Projects Done -->
-    <h2 class="section-title">Projects Done</h2>
+  <nav>
+    <ul class="nav-list">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/events">Events</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/team">Team</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    <div class="project">
-      <div class="project-content">
+  <div class="page-header">
+    <h1>OUR PROJECTS</h1>
+    <p>Innovation • Automation • Creation</p>
+  </div>
+
+  <div class="projects-container">
+    <h2 class="section-title">Completed Projects</h2>
+
+    <div class="project-card">
+      <div class="project-info">
         <h3>RONIN - 15kg BattleBot</h3>
         <p>Uses Vertical Spinner as weapon.</p>
         <p>H-700 BLDC as weapon motor.</p>
         <p>2 - 4260 BLDC as Drive Motors</p>
       </div>
-      <div class="project-video">
+      <div class="project-media">
         <video controls>
-          <source src="line-follower.mp4" type="video/mp4">
+          <source src="ronin-battlebot.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
     </div>
 
-    <div class="project">
-      <div class="project-content">
+    <div class="project-card">
+      <div class="project-info">
         <h3>Windy Wedge - 8kg BattleBot</h3>
         <p>Uses Wedge as Defence weapon</p>
         <p>2 DC as Drive Motors</p>
         <p>Sabertooth as Motor Driver</p>
       </div>
-      <div class="project-video">
+      <div class="project-media">
         <video controls>
-          <source src="gesture-bot.mp4" type="video/mp4">
+          <source src="windy-wedge.mp4" type="video/mp4">
+          Your browser does not support the video tag.
         </video>
       </div>
     </div>
-    
-    <div class="project">
-      <div class="project-content">
+
+    <div class="project-card">
+      <div class="project-info">
         <h3>Remote Controlled Car</h3>
         <p>HobbyWing Ezrun Max BLDC AS Drive Motor</p>
       </div>
-      <div class="project-video">
+      <div class="project-media">
         <video controls>
-          <source src="gesture-bot.mp4" type="video/mp4">
+          <source src="rc-car.mp4" type="video/mp4">
+          Your browser does not support the video tag.
         </video>
       </div>
     </div>
-
-    <!-- Ongoing and Upcoming Projects -->
-    <h2 class="section-title">Projects In Progress</h2>
-
-    <div class="project">
-      <div class="project-content">
+    
+    <h2 class="section-title">Current Projects</h2>
+    
+    <div class="project-card">
+      <div class="project-info">
         <h3>15 kg BattleBot 2.0</h3>
       </div>
     </div>
-    
-    <div class="project">
-      <div class="project-content">
+
+    <div class="project-card">
+      <div class="project-info">
         <h3>Manipulator</h3>
       </div>
     </div>
-    
-    <div class="project">
-      <div class="project-content">
-        <h3>Line Follower</h3>
+
+    <div class="project-card">
+      <div class="project-info">
+        <h3>Line Follower Robot</h3>
       </div>
-    </div>
   </div>
+
+  <footer>
+    &copy; 2024 IIITDM Robotics Club | All Rights Reserved
+  </footer>
 </body>
 </html>
-
-
