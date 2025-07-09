@@ -29,11 +29,8 @@ def contact_us():
     return render_template("contact.html")
 
 if __name__ == "__main__":
-    # Check if running on Render.com
+    port = int(os.environ.get("PORT", 10000))
     if os.environ.get('RENDER'):
-        # Let Gunicorn handle the app
-        app.run()
+        app.run(host='0.0.0.0', port=port)
     else:
-        # Local development using Waitress
-        port = int(os.environ.get("PORT", 8080))
         serve(app, host="0.0.0.0", port=port)
