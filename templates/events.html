@@ -100,17 +100,6 @@
         opacity: 0.1;
     }
 
-    .event-image {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-    }
-
-    .event-card:hover .event-image {
-        transform: scale(1.05);
-    }
-
     .event-info {
         padding: 1.5rem;
         position: relative;
@@ -174,7 +163,6 @@
     .event-detail i {
         color: var(--primary-color);
     }
-
     .event-link {
         display: inline-block;
         color: var(--text-primary);
@@ -189,6 +177,23 @@
 
     .event-link:hover {
         transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 242, 255, 0.2);
+    }
+
+    .past-event-link {
+        display: inline-block;
+        color: var(--text-primary);
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+   
+        background: rgb(228, 221, 221);
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 0.9rem;
+    }
+
+    .past-event-link:hover {
         box-shadow: 0 5px 15px rgba(0, 242, 255, 0.2);
     }
 
@@ -208,13 +213,12 @@
     <div class="circuit-pattern"></div>
     <div class="events-container">
         <div class="events-header">
-            <h1 class="events-title">Upcoming Events</h1>
-            <p class="events-subtitle">Join us for exciting robotics events and workshops</p>
+            <h1 class="events-title">Organised  Events</h1>
+            <p class="events-subtitle"> robotics events and workshops conducted by robotics club</p>
         </div>
 
         <div class="events-grid">
             <div class="event-card">
-                <img src="https://images.unsplash.com/photo-1581092921461-39b9d08a9b21?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Robotics Workshop" class="event-image">
                 <div class="event-info">
                     <div class="event-date"><i class="fas fa-calendar"></i> March 15, 2024</div>
                     <h2 class="event-title"><i class="fas fa-robot"></i> Robotics Workshop</h2>
@@ -229,12 +233,11 @@
                             <i class="fas fa-map-marker-alt"></i> Main Lab, IIITDM
                         </div>
                     </div>
-                    <a href="#" class="event-link">Register Now</a>
+                    <a href="#" class="past-event-link">Register Now</a>
                 </div>
             </div>
 
             <div class="event-card">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="BattleBot Competition" class="event-image">
                 <div class="event-info">
                     <div class="event-date"><i class="fas fa-calendar"></i> April 5, 2024</div>
                     <h2 class="event-title"><i class="fas fa-trophy"></i> BattleBot Competition</h2>
@@ -249,12 +252,11 @@
                             <i class="fas fa-map-marker-alt"></i> Sports Complex, IIITDM
                         </div>
                     </div>
-                    <a href="#" class="event-link">Register Now</a>
+                    <a href="#" class="past-event-link">Register Now</a>
                 </div>
             </div>
 
             <div class="event-card">
-                <img src="https://images.unsplash.com/photo-1507582020474-9a35b7d455d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="AI in Robotics Seminar" class="event-image">
                 <div class="event-info">
                     <div class="event-date"><i class="fas fa-calendar"></i> May 20, 2024</div>
                     <h2 class="event-title"><i class="fas fa-brain"></i> AI in Robotics Seminar</h2>
@@ -269,9 +271,13 @@
                             <i class="fas fa-map-marker-alt"></i> Conference Hall, IIITDM
                         </div>
                     </div>
-                    <a href="#" class="event-link">Register Now</a>
+                    <a href="#" class="past-event-link">Register Now</a>
                 </div>
             </div>
+        </div>
+        <div class="events-header">
+            <h1 class="events-title">Upcoming Events</h1>
+            <p class="events-subtitle">Join us for exciting robotics events and workshops</p>
         </div>
     </div>
 </div>
