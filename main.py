@@ -16,6 +16,7 @@ def about_us():
 def events():
     return render_template("events.html")
 
+
 @app.route("/projects")
 def our_projects():
     return render_template("projects.html")
@@ -29,8 +30,9 @@ def contact_us():
     return render_template("contact.html")
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))
-    if os.environ.get('RENDER'):
-        app.run(host='0.0.0.0', port=port)
-    else:
-        serve(app, host="0.0.0.0", port=port)
+    app.run(debug=True)
+    # port = int(os.environ.get("PORT", 10000))
+    # if os.environ.get('RENDER'):
+    #     app.run(host='0.0.0.0', port=port)
+    # else:
+    #     serve(app, host="0.0.0.0", port=port)
